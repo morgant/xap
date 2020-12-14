@@ -1,0 +1,22 @@
+# sample style file for xpg
+#
+
+style "text" {
+	font = "fixed"
+}
+
+style "small" {
+	font = "-*-helvetica-medium-r-*"
+}
+
+style "list"
+{
+    font = "-*-neep-medium-r-semicondensed-*-13-*-75-75-c-*-iso8859-1"
+    fg[NORMAL] = {0.0, 0.0, 0.0}
+    base[NORMAL] = "#dfdfdf"
+}
+
+widget "*GtkText*" style "text"
+widget "*GtkCList*" style "list"
+widget "*GtkToolbar*" style "small"
+

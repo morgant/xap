@@ -1,0 +1,22 @@
+/* XPM */
+static char * mini_xcpustate_xpm[] = {
+"16 16 3 1",
+" 	s None	c None",
+".	c yellow",
+"X	c black",
+"                ",
+"                ",
+"    . . . .     ",
+"    . . . .     ",
+"   X.X.X.X.X    ",
+" ...XXXXXXX...  ",
+"   XXXXXXXXX    ",
+" ...XXXXXXX...  ",
+"   XXXXXXXXX    ",
+" ...XXXXXXX...  ",
+"   XXXXXXXXX    ",
+" ...XXXXXXX...  ",
+"   X.X.X.X.X    ",
+"    . . . .     ",
+"    . . . .     ",
+"                "};

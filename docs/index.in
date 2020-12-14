@@ -1,0 +1,93 @@
+<TITLE>rasca's xap and xwf</TITLE>
+	<META name=description content="XAP - Application Panel for X11, xwf - Filemanager for X11">
+	<META name=keywords content="gtk+, Linux, X11, xap, xwf, rasca, xpg">
+	<LINK href="docs/xap.css" rel="STYLESHEET">
+<BODY bgcolor=white text=black>
+<address>
+<font size=-1>http://home.pages.de/~rasca/xap/</font>
+</address><DIV align=right>
+<H2>
+	<FONT class=red><em>X</em></FONT>
+	<FONT class=red><em>A</em></FONT>pplication
+	<FONT class=red><em>P</em></FONT>anel<BR>
+	<FONT class=red><em>X</em></FONT>
+	<FONT class=red><em>W</em></FONT>indow
+	<FONT class=red><em>F</em></FONT>ilemanager<BR>
+	<FONT class=red><em>X</em></FONT>
+	<FONT class=red><em>P</em></FONT>rivacy
+	<FONT class=red><em>G</em></FONT>uard</H2></DIV>
+
+<B>Version _VERSION_ - &copy Rasca, Berlin 1999 - 2000,
+	published under the <A href=COPYING>GNU GPL</A>
+<BR>
+Warning: This is a beta release, don't use it to copy or move
+critical data!</B>
+<P>
+<UL>
+<LI><B>Needed libraries:</B>
+	<A href="ftp://ftp.gtk.org/pub/gtk/">glib/gtk+</A> 1.2.0 or newer!
+	Note: You can check this with the command 'gtk-config --version',
+	don't use version 1.2.4, seems to be problematic with xap.
+	<P>
+<LI><B>Download:</B>
+	Get the current
+	<A href="/~rasca/xap-_VERSION_.tar.gz">source code</A>
+	of <EM>xap</EM> and <EM>xwf</EM> via HTTP or
+	first checkout the <A href=ChangeLog>ChangeLog</A> to see what has changed
+	since the last release. For a RPM package have a look at Romildo's ftp
+	site <A href=ftp://urano.iceb.ufop.br/pub/xap/>ftp://urano.iceb.ufop.br/pub/xap/</A>
+	<P>
+<LI><B>Installation:</B>
+	see the <A href=INSTALL>INSTALL</A> document ..
+<P>
+<LI><EM><font color=red>xap</font></EM><BR>
+<A href="docs/desktop.png"><img alt="[screendump-xap]" src=docs/xap.png width=266 height=48 align=right></A>
+	Usage:
+	<code>xap [-v] [-t] [-g &lt;geom&gt;]</code>
+	<P>
+	<EM>xap</EM> looks for a directory named '$HOME/.xap'. For every included
+	subdirectoy a notebook page is created in the GUI. Every symbolic
+	link in this subdirectories will result in an application button
+	to start this application or to drop file names which will be
+	passed as arguments while launching this program.
+	<P>
+	A <EM>Drag and Drop</EM> of an application to the label of a notebook-page
+	will create a new program button. Use mouse button 3 over a program-button
+	to rename or delete a button.
+	<P>
+<LI><EM><font color=red>xwf</font></EM><BR>
+<A href=docs/xwf.png>
+<img alt="[screendump-xwf]" src=docs/xwf_small.png width=180 height=258 align=right>
+</A>
+	Usage:
+	<code>xwf [-v] [directory] [-g &lt;geom&gt;]</code><BR>
+	For a short description of the <EM>xwf</EM> application and
+	a list of the keyboard short cuts look inside the included
+	man-page.
+	<P>
+<LI><EM><font color=red>xpg</font></EM><BR>
+	Usage:
+	<CODE>xpg [files ..]</CODE>
+	<P>
+<LI><B>Todo:</B><BR>
+	Bug fixes..<BR>
+	Code cleanups..<BR>
+<P>
+<LI><B>Links:</B><BR>
+	<UL>
+	<LI><A href="http://www.gtk.org/">Gtk+</A>, X-Window GUI library
+	<LI><A href="http://www2u.biglobe.ne.jp/~y-miyata/mlvwm.html">Mlvwm</A>,
+		Mac-like window-manager
+	<LI><A href="http://www.gnome.org/">Gnome</A>, gtk+ based desktop environment
+	<LI><A href="http://www.its.caltech.edu/~jafl/xdnd/">XDND</A>, Drag and Drop protocol
+	<LI><A href="http://www.xfce.org/">XFCE</A>, Desktop environment with modified <EM>xwf</EM> version
+	</UL>
+</UL>
+<DIV class=navi>
+|<A href="/~rasca/">Home</A>|
+</DIV>
+<P>
+<ADDRESS>
+<A href="mailto:thron@gmx.de">rasca</A>,
+12. Sep 2000 - 01:47
+</ADDRESS>

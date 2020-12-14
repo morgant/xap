@@ -1,0 +1,23 @@
+
+body {
+	background: white;
+}
+
+address {
+	font-size: small;
+}
+
+.navi {
+	width: 100%;
+	border-width: 1;
+	background: gray;
+}
+
+.red {
+	color: red;
+}
+
+A:link {
+	color: red;
+	background: rgb(240,240,240);
+}

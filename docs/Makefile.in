@@ -1,0 +1,5 @@
+all: ../README
+
+../README: ../index.html
+	cd .. && make README
+ 

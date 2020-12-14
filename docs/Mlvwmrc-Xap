@@ -1,0 +1,141 @@
+# sample rc file for mlvwm and xap package
+# add a like like the following to your .mlvwmrc file:
+#   Read Mlvwmrc-Xap
+#
+# "M+" means Alt+ on a PC keyboard..
+
+Menu xwf-file, Label "File", Left
+"New Folder .."		Action SendMessage M+n
+"New File .."		Action SendMessage M+k
+"Open with .."		Action SendMessage M+o
+"Close Window"		Action SendMessage M+w
+"" NonSelect
+"Get Info .."		Action SendMessage M+i
+"Register .."		Action SendMessage M+j
+"Duplicate"			Action SendMessage M+d
+"" NonSelect
+"Find .."			Action SendMessage M+f
+"Go up"				Action SendMessage M+u
+"Go to selected"	Action SendMessage M+g
+"Go home"			Action SendMessage M+h
+"" NonSelect
+"Quit"				Action SendMessage M+q
+END
+
+Menu xwf-edit, Label "Edit", Left
+"Select all"		Action SendMessage M+a
+"Unselect all"		Action SendMessage SM+a
+"" NonSelect
+"Delete .."			Action SendMessage C+x
+"Rename .."			Action SendMessage M+r
+END
+
+Menu xwf-view, Label "View", Left
+"by Name"				Action SendMessage CM+n
+"by Size"				Action SendMessage CM+s
+"by Date"				Action SendMessage CM+d
+"" NonSelect
+"View/Hide Dotfiles"	Action SendMessage SM+d
+END
+
+Menu xwf-label, Label "Label", Left
+"None"				NonSelect, Gray
+"" NonSelect
+END
+
+Menu xwf-special, Label "Special", Left
+"Clean Up Desktop",	Action Refresh
+"" NonSelect
+"Empty Trash"		Action SendMessage M+e
+"Open Trash"		Action SendMessage M+t
+"" NonSelect
+"Restart"			Action Restart mlvwm
+"Shut down"			Action Exit
+END
+
+Menu xwf-help, Label "Help", Right
+"About .."			Action SendMessage C+a
+END
+
+MenuBar xwf
+xwf-file
+xwf-edit
+xwf-view
+xwf-label
+xwf-special
+xwf-help
+END
+
+Menu xap-file, Label "File", Left
+"New Page .."		Action SendMessage M+n
+"" NonSelect
+"Quit"				Action SendMessage M+q
+END
+
+Menu xap-special, Label "Special", Left
+"Clean Up Desktop",	Action Refresh
+"" NonSelect
+"Restart"			Action Restart mlvwm
+"Shut down"			Action Exit
+END
+
+MenuBar xap
+xap-file
+xap-special
+END
+
+Menu xfi-file, Label "File", Left
+"Save result as .."	Action SendMessage M+s
+"" NonSelect
+"Quit"				Action SendMessage M+q
+END
+
+Menu xfi-edit, Label "Edit", Left
+"Select all"		Action SendMessage M+a
+"Unselect all"		Action SendMessage M+u
+END
+
+Menu xfi-help, Label "Help", Right
+"About .."			Action SendMessage C+a
+END
+
+MenuBar xfi
+xfi-file
+xfi-edit
+xfi-help
+END
+
+Menu xat-file, Label "File", Left
+"Quit"				Action SendMessage M+q
+END
+
+Menu xat-edit, Label "Edit", Left
+"" NonSelect
+END
+
+MenuBar xat
+xat-file
+xat-edit
+END
+
+Menu xpg-file, Label "File", Left
+"Quit"				Action SendMessage M+q
+END
+
+Menu xpg-edit, Label "Edit", Left
+"" NonSelect
+END
+
+MenuBar xpg
+xpg-file
+xpg-edit
+END
+
+Style
+"Xap"	MiniIcon mini-xap.xpm, MenuBar xap, Sticky, NoSBarH, NoSBarV
+"Xwf"	MiniIcon mini-xwf.xpm, MenuBar xwf, NoSBarH, NoSBarV
+"Xfi"   MiniIcon mini-xfi.xpm, MenuBar xfi, NoSBarH, NoSBarV
+"Xat"   MiniIcon mini-xat.xpm, MenuBar xat, NoSBarH, NoSBarV
+"Xpg"   MiniIcon mini-xpg.xpm, MenuBar xpg, NoSBarH, NoSBarV
+END
+

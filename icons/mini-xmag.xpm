@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_xmag_xpm[] = {
+"16 16 4 1",
+" 	c white",
+".	c black",
+"X	c None",
+"o	c yellow",
+"                ",
+"                ",
+"  ............  ",
+"  ............  ",
+"  ..            ",
+"  ..            ",
+"  ..  XXXXXXXXXX",
+"  ..  XooooooooX",
+"  ..  XooooooooX",
+"  ..  XooooooooX",
+"  ..  XooooooooX",
+"  ..  XooooooooX",
+"  ..  XooooooooX",
+"  ..  XooooooooX",
+"      XooooooooX",
+"      XXXXXXXXXX"};

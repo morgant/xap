@@ -1,0 +1,30 @@
+/* XPM */
+static char *kmedia_mini[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        7            1",
+/* colors */
+". c #000000",
+"# c #586058",
+"a c #604818",
+"b c #70a800",
+"c c #989c98",
+"d c #d8e0d8",
+"e c none",
+/* pixels */
+"eeeeeeeeeeeeeeee",
+"eeeeeeeeeeeeeeee",
+"eeeebaabbe..eeee",
+"eeeaaaaaabdd#eee",
+"eebabbbbaa###.ee",
+"eebabbbbaa#####e",
+"eeeaaabbab..##.#",
+"eeebaabaa#d###.#",
+"eeaeebbba#d###.#",
+"eaeaaee.a#..#c.#",
+"eaeeeaeea###cc#e",
+"eaeeeeaa##ccccee",
+"eeaeeeee.#ccc.ee",
+"eeeaeeeee.#c.eee",
+"eeeeaeeeeeeeeeee",
+"eeeeeeeeeeeeeeee"
+};

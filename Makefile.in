@@ -1,0 +1,145 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+mandir=@mandir@
+datadir=@datadir@
+icondir=${datadir}/icons
+kdedir=@ac_kde@
+gnomedir=@ac_gnome@
+mlvwmdir=@ac_mlvwm@
+libdir=@prefix@/lib/xap
+
+include icons/Makefile
+
+VERSION = @VERSION@
+
+CC		= @CC@
+LIBS	= @LIBS@
+CFLAGS	= @CFLAGS@ @DEFS@ @X_CFLAGS@ -D_REENTRANT -DVERSION=\"$(VERSION)\" \
+		-DINSTDIR=\"$(prefix)\" -DICONDIR=\"${icondir}\" \
+		-DLOCALEDIR=\"${datadir}/locale\" -I. -I./lib-src \
+		-DPLUGINDIR=\"$(libdir)\" -DDATA_DIR=\"${datadir}\" -DXAP_RC=\"xap.rc\"
+
+XAP_OBJS =	xap-src/xap.o xap-src/xap_gui.o \
+			lib-src/gtk_util.o lib-src/gtk_dlg.o lib-src/gtk_dnd.o \
+			lib-src/uri.o \
+			lib-src/io.o lib-src/gtk_exec.o lib-src/entry.o lib-src/lnk.o \
+			lib-src/lnk_opt.o lib-src/xap_fs.o
+
+XWF_OBJS =	xwf-src/xwf.o xwf-src/xwf_gui.o \
+			xwf-src/top.o xwf-src/xwf_dnd.o \
+			xwf-src/gtk_get.o xwf-src/xwf_misc.o \
+			xwf-src/xwf_icon.o xwf-src/history.o \
+			lib-src/gtk_dlg.o lib-src/gtk_dnd.o lib-src/mailcap.o \
+			lib-src/gtk_util.o \
+			lib-src/entry.o lib-src/uri.o lib-src/io.o lib-src/gtk_exec.o \
+			lib-src/reg.o lib-src/lnk.o lib-src/adouble.o
+
+XPG_OBJS =	xpg-src/xpg.o xpg-src/xpg_gui.o xpg-src/xpg_opt.o \
+			lib-src/gtk_util.o lib-src/lnk.o \
+			lib-src/gtk_dlg.o lib-src/gtk_dnd.o \
+			lib-src/io.o lib-src/uri.o lib-src/gtk_exec.o lib-src/entry.o \
+			lib-src/xap_fs.o
+
+XCP_OBJS =	xcp-src/xcp.o xcp-src/xcp_gui.o lib-src/adouble.o \
+			lib-src/entry.o lib-src/gtk_dlg.o lib-src/gtk_dnd.o lib-src/io.o
+
+XFI_OBJS =	xfi-src/main.o xfi-src/gui.o xfi-src/callbacks.o \
+			xfi-src/support.o lib-src/entry.o lib-src/reg.o \
+			lib-src/io.o lib-src/uri.o
+
+XAT_OBJS =	xat-src/main.o xat-src/gui.o xat-src/callbacks.o \
+			xat-src/support.o lib-src/entry.o lib-src/mailcap.o \
+			lib-src/gtk_dlg.o lib-src/gtk_dnd.o \
+			lib-src/gtk_util.o lib-src/adouble.o
+
+
+all: xap xwf README po xpg xcp xfi xat
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+xap: $(XAP_OBJS)
+	$(CC) -o $@ $(XAP_OBJS) $(LIBS)
+
+xwf: $(XWF_OBJS)
+	$(CC) -o $@ $(XWF_OBJS) $(LIBS)
+
+xpg: $(XPG_OBJS)
+	$(CC) -o $@ $(XPG_OBJS) $(LIBS)
+
+xcp: $(XCP_OBJS)
+	$(CC) -o $@ $(XCP_OBJS) $(LIBS)
+
+xfi: $(XFI_OBJS)
+	$(CC) -o $@ $(XFI_OBJS) $(LIBS)
+
+xat: $(XAT_OBJS)
+	$(CC) -o $@ $(XAT_OBJS) $(LIBS)
+
+
+
+index.html: docs/index.in
+	sed "s/_VERSION_/$(VERSION)/" < $< > $@
+
+po:
+	cd po && make
+
+README: index.html
+	lynx -dump http://lupo/~rasca/xap | \
+		sed "s%http://lupo%http://home.pages.de%"> README
+
+install: all
+	@test -d ${bindir}/ || install -d ${bindir}
+	@test -d ${mandir}/man1 || install -d ${mandir}/man1
+	@test -d ${libdir}/ || install -d ${libdir}
+	@test -d ${datadir}/xap || install -d ${datadir}/xap
+	install -s xap ${bindir}/
+	install -s xwf ${bindir}/
+	install -s xpg ${libdir}/
+	install -s xcp ${libdir}/
+	install -s xfi ${libdir}/
+	install -s xat ${libdir}/
+	gzip -c docs/xap.1 > ${mandir}/man1/xap.1.gz
+	gzip -c docs/xwf.1 > ${mandir}/man1/xwf.1.gz
+	gzip -c docs/xpg.1 > ${mandir}/man1/xpg.1.gz
+	@test -f ${datadir}/xap/xap.rc || \
+		install -m 644 docs/xap.rc ${datadir}/xap/xap.rc
+	test -d ${icondir}/ || install -d ${icondir}
+	for i in $(ICONS); do test -f ${icondir}/$$i || \
+		install -m 644 icons/$$i ${icondir}/ ; done
+	test -d ${kdedir}/share/applnk/Applications && \
+		install docs/xwf.kdelnk ${kdedir}/share/applnk/Applications
+	test -d ${kdedir}/share/applnk/Applications && \
+		install docs/xap.kdelnk ${kdedir}/share/applnk/Applications
+	test -d ${kdedir}/share/icons/mini && \
+		install -m 644 icons/mini-xap.xpm ${kdedir}/share/icons/mini
+	test -d ${kdedir}/share/icons/mini && \
+		install -m 644 icons/mini-xwf.xpm ${kdedir}/share/icons/mini
+	test -d ${gnomedir}/share/gnome/apps/Applications && \
+		install docs/xap.desktop ${gnomedir}/share/gnome/apps/Applications
+	test -d ${gnomedir}/share/gnome/apps/Applications && \
+		install docs/xwf.desktop ${gnomedir}/share/gnome/apps/Applications
+	test -d ${gnomedir}/share/pixmaps && \
+		install icons/mini-xap.xpm ${gnomedir}/share/pixmaps
+	test -d ${gnomedir}/share/pixmaps && \
+		install icons/mini-xwf.xpm ${gnomedir}/share/pixmaps
+	test -d ${mlvwmdir}/share/mlvwm && \
+		( test -f ${mlvwmdir}/share/mlvwm/Mlvwmrc-Xap || \
+		install -m 644 docs/Mlvwmrc-Xap ${mlvwmdir}/share/mlvwm/ )
+
+clean:
+	rm -f $(XWF_OBJS) $(XAP_OBJS) $(XPG_OBJS) $(XCP_OBJS) $(XFI_OBJS) \
+		$(XAT_OBJS) $(LIB_OBJS) *.a xap xwf xpg xcp xfi xat core \
+		AUTHORS *.bak Makefile.am xfi-src/Makefile.am
+
+distclean: clean
+	rm -f Makefile stamp-h.in config.cache config.status config.log \
+		po/Makefile.in po/Makefile
+
+testxwf: xwf
+	./xwf
+
+tarball: distclean
+	cd ../ && tar -czvf xap-$(VERSION).tar.gz xap-$(VERSION)/
+

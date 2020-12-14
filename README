@@ -1,0 +1,69 @@
+
+   
+    http://home.pages.de/~rasca/xap/
+    
+                                                         X Application Panel
+                                                        X Window Filemanager
+                                                             X Privacy Guard
+                                                                            
+   Version 0.9.7 - © Rasca, Berlin 1999 - 2000, published under the
+   [1]GNU GPL
+   Warning: This is a beta release, don't use it to copy or move critical
+   data!
+   
+     * Needed libraries: [2]glib/gtk+ 1.2.0 or newer! Note: You can check
+       this with the command 'gtk-config --version', don't use version
+       1.2.4, seems to be problematic with xap.
+     * Download: Get the current [3]source code of xap and xwf via HTTP
+       or first checkout the [4]ChangeLog to see what has changed since
+       the last release. For a RPM package have a look at Romildo's ftp
+       site [5]ftp://urano.iceb.ufop.br/pub/xap/
+     * Installation: see the [6]INSTALL document ..
+     * xap
+       [7][screendump-xap] Usage: xap [-v] [-t] [-g <geom>]
+       xap looks for a directory named '$HOME/.xap'. For every included
+       subdirectoy a notebook page is created in the GUI. Every symbolic
+       link in this subdirectories will result in an application button
+       to start this application or to drop file names which will be
+       passed as arguments while launching this program.
+       A Drag and Drop of an application to the label of a notebook-page
+       will create a new program button. Use mouse button 3 over a
+       program-button to rename or delete a button.
+     * xwf
+       [8][screendump-xwf] Usage: xwf [-v] [directory] [-g <geom>]
+       For a short description of the xwf application and a list of the
+       keyboard short cuts look inside the included man-page.
+     * xpg
+       Usage: xpg [files ..]
+     * Todo:
+       Bug fixes..
+       Code cleanups..
+     * Links:
+          + [9]Gtk+, X-Window GUI library
+          + [10]Mlvwm, Mac-like window-manager
+          + [11]Gnome, gtk+ based desktop environment
+          + [12]XDND, Drag and Drop protocol
+          + [13]XFCE, Desktop environment with modified xwf version
+       
+   |[14]Home|
+   
+   
+    [15]rasca, 12. Sep 2000 - 01:47
+
+References
+
+   1. http://home.pages.de/~rasca/xap/COPYING
+   2. ftp://ftp.gtk.org/pub/gtk/
+   3. http://home.pages.de/~rasca/xap-0.9.7.tar.gz
+   4. http://home.pages.de/~rasca/xap/ChangeLog
+   5. ftp://urano.iceb.ufop.br/pub/xap/
+   6. http://home.pages.de/~rasca/xap/INSTALL
+   7. http://home.pages.de/~rasca/xap/docs/desktop.png
+   8. http://home.pages.de/~rasca/xap/docs/xwf.png
+   9. http://www.gtk.org/
+  10. http://www2u.biglobe.ne.jp/~y-miyata/mlvwm.html
+  11. http://www.gnome.org/
+  12. http://www.its.caltech.edu/~jafl/xdnd/
+  13. http://www.xfce.org/
+  14. http://home.pages.de/~rasca/
+  15. mailto:thron@gmx.de

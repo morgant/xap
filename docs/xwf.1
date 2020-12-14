@@ -1,0 +1,146 @@
+.\" Written by Rasca Gmelch, Berlin 1999 - 2000
+.\" Published under the GNU GPL V2
+.TH XWF 1 "Jul. 2000" "GNU" "Version 0.9"
+.SH NAME
+xwf - gtk+ based filemanager for X Window
+.SH SYNOPSIS
+.BI "xwf [-v] ["<dir> "] [-g "<x-geometry> "]
+.SH OPTIONS
+.TP
+.BI -v
+.br
+Verbose mode, give some output on startup.
+.TP
+.I <dir>
+Use this directory as the root for the tree on startup.
+.TP
+.BI -g \ <x-geometry>
+Define the geometry of the toplevel window, e.g.
+.I -g 300x400
+.SH QUICK REFERENCE
+Starting
+.I xwf
+will use the home-directory as the default root
+if no directory is given as argument.
+
+Right mouse button: pops up a context menu (which one depends on selected
+items).
+
+Left mouse button: select an item, pressing SHIFT will select
+up to and pressing CTRL will add/remove the clicked item. Moving
+will initalize a 'Drag and Drop' operation.
+
+Middle mouse button: good for DND operations, cause the selection
+will not be changed. The application will also ask you what you
+want to do: move, copy or link.
+
+DoubleClick: start the clicked application or if the item is
+a normal file start the registered program and give the file
+as argument.
+
+Alt+DoubleClick: same as above but start in a terminal program.
+If clicked item is a directory, change the root of the tree
+to that directory. Concerning a directory you can use also
+Ctrl+DoubleClick.
+
+Drag and Drop: the default DND operation is to copy the items.
+If you press SHIFT you can move instead of copy selected items.
+Using the middle mouse button you will be asked if you want to
+copy, move or link the file / directory.
+If you DND a URL, e.g. from mozilla a download program is
+called and you can watch in a small dialog window the transfer.
+.SH KEYBOARD SHORT CUTS
+.TP
+Alt+A
+Select all items in the focused directory.
+.TP
+Alt+Shift+A
+Unselect all items.
+.TP
+Ctrl+A
+Open the 'About' dialog. This gives you the version
+information.
+.TP
+Alt+O
+Open marked files or open direcotry in a new window.
+.TP
+Alt+D
+Duplicate the marked file(s) and directories.
+.TP
+Alt+Shift+D
+Hide/show hidden files (dotfiles).
+.TP
+Alt+E
+Empty the trash directory.
+.TP
+Alt+F
+Find files in the current directory.
+.TP
+Alt+G
+Go to selected directory or ask the user if no directory entries
+are selected.
+.TP
+Alt+H
+Go to home directory.
+.TP
+Alt+I
+Properties / information of selected items.
+.TP
+Alt+J
+Register an application for a file name suffix.
+.TP
+Alt+K
+Create a new file.
+.TP
+Alt+N
+Create a new directory.
+.TP
+Alt+M
+Make a new alias (soft link).
+.TP
+Alt+R
+Rename selected file / directory.
+.TP
+Alt+T
+Open trash directory in a new window.
+.TP
+Alt+U
+Go one directory level up.
+.TP
+BACKSPACE
+Go one directory level up.
+.TP
+Alt+W
+Close current window.
+.TP
+Alt+Q
+Quit the program.
+.TP
+Ctrl+X
+Delete selected items, same as pressing the Delete key.
+.TP
+Alt+BACKSPACE
+Delete selected itmes but without confirmation dialog.
+.SH FILES
+.TP
+$HOME/.xap/xwf.rc
+xwf gtk+ rc file, use it to configure fonts and colors.
+.TP
+$HOME/.xap/xwf.reg
+xwf registry
+.TP
+$HOME/.xap/.trash/
+xwf's trash directory
+.TP
+$HOME/.xap/.icons/
+xwf's user icon directory
+.SH SEE ALSO
+.B xap(1), xpg(1), X(1)
+.SH AUTHOR
+(c) Rasca, Berlin
+.br
+http://home.pages.de/~rasca/
+.br
+.I xwf
+is published under the GNU General Public License
+

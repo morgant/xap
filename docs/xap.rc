@@ -1,0 +1,50 @@
+style "default"
+{
+	font = "*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*"
+}
+
+style "files"
+{
+	font = "fixed"
+	fg[NORMAL] = {0.0, 0.0, 0.0}
+	base[NORMAL] = "#d9d9d9"
+}
+
+style "column_header"
+{
+	bg[NORMAL] = "#cfcbcf"
+	font = "*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*"
+}
+
+style "xap_notebook_label"
+{
+	font = "*-helvetica-medium-r-normal-*-10-*"
+}
+
+style "notebook_label"
+{
+	font = "*-helvetica-medium-r-normal-*-12-*"
+}
+
+style "toolbar_label"
+{
+	font = "*-helvetica-medium-r-normal-*-10-*"
+}
+
+
+style "text"
+{
+	font = "fixed"
+}
+
+widget "*" style "default"
+widget "*GtkCTree*" style "files"
+widget "*GtkList*" style "files"
+widget "*GtkCList*" style "files"
+widget "*GtkText*" style "text"
+widget "*GtkCTree*GtkButton*" style "column_header"
+widget "xap*GtkNotebook?GtkLabel" style "xap_notebook_label"
+widget "xpg*GtkNotebook?GtkLabel" style "notebook_label"
+widget "xat*GtkNotebook?GtkLabel" style "notebook_label"
+widget "xfi*GtkNotebook?GtkLabel" style "notebook_label"
+widget "*GtkToolbar*GtkLabel" style "toolbar_label"

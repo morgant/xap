@@ -1,0 +1,3 @@
+	../lib-src/gtk_dlg.c \
+	../lib-src/gtk_exec.c \
+	../xap-src/xap_gui.c

@@ -1,0 +1,13 @@
+# KDE Config File
+[KDE Desktop Entry]
+BinaryPattern=xap;
+Comment=A application panel
+Comment[de]=Ein Programm-Panel
+Exec=xap
+Icon=mini-xap.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
+Name=X Application Panel
+Name[de]=X Programm Panel

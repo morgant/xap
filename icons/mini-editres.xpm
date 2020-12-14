@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_editres_xpm[] = {
+"16 16 4 1",
+" 	c None",
+".	c #808080",
+"X	c black",
+"o	c brown",
+"                ",
+"        ..      ",
+"       .XX.     ",
+"       XXXX.    ",
+"        XXXX.   ",
+"         XXXX.  ",
+"        oXXXX.  ",
+"       ooX XX.  ",
+"      ooX   X.  ",
+"     ooX     .  ",
+"    ooX         ",
+"   ooX          ",
+"  ooX           ",
+" ooX            ",
+" oX             ",
+"                "};

@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_mpg123_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c red3",
+"X	c red4",
+"o	c blue4",
+"                ",
+".   . ...   ... ",
+".X X. .  . .   .",
+". . . .  . .    ",
+". . . ...  . ...",
+".   . .    .   .",
+".   . .    .   .",
+".   . .     ... ",
+"                ",
+"   o   oo  ooo  ",
+"  oo  o  o    o ",
+" o o     o    o ",
+"   o    o   oo  ",
+"   o   o      o ",
+"   o  o       o ",
+"   o  oooo ooo  "};

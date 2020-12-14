@@ -1,0 +1,755 @@
+12.09.2000
+	- released 0.9.7
+	- xcp-src/xcp_gui.c: fixed typo (override -> overwrite)
+	- configure.in: diffent minor cleanups
+	- Makefile.in: don't remove acconfig.h on "distclean"
+
+11.09.2000
+	- minor changes in configure.in and Makefile.in
+	- minor changes in Mlvwmrc-Xwf and renamed it to Mlvwmrc-Xap
+
+09.09.2000
+	- minor changes in xat.rc
+	- fixed a bug in the delete dialog routine
+	- xat: remove third notebook page
+	- xat: added "disk usage" button
+	- xwf: cb_rename(): extra warning if filename longer than 31 chars
+	  (only if ADOUBLE is defined)
+	- lib-src/gtk_dnd.c: code clean ups
+	- xfi.glade: more keyboard support
+	- xat.glade: more keyboard support
+	- lib-src/gtk_exec.c: completly rewritten
+
+30.08.2000
+	- xfi: allow escape and alt+w to close dialog windows.
+	- xat: allow alt+w to cancel/close the window.
+
+29.08.2000
+	- cosmetic changes
+
+28.08.2000
+	- released 0.9.6
+	- xwf: removed internal code for file deletion and switched to "xcp"
+	  so .AppleDouble files are also trashed
+	- lib-src/lnk_opt.c: right alignment of the labels.
+	- lib-src/xap_fs.c: fs_get_file(): use first arg as default directory
+	- Makefile.in: remove the xat binary in case of "make clean"
+	- all: added DND to the fileselection window.
+	- xpg: added "open" button to read in an ascii file.
+
+28.08.2000
+	- released 0.9.5
+	- xap-src/xap_gui.c: fixed on_data_received()
+	- lib-src/gtk_exec.c: added DND support
+	- changes in the Makefile.in to link gtk_dnd.o
+	- lib-src/lnk_opt.c: use gtk_dnd.c|h
+	- lib-src/ new file gtk_dnd.c for a simple dnd receive function
+	- xap: fixed the problem to change an icon with the option dialog
+
+25.08.2000
+	- xwf-src/xwf_gui.c: fixed the problem compiling without ADOUBLE
+	  defined.
+
+25.08.2000
+	- released 0.9.4
+
+25.08.2000
+	- xwf: added appledouble support for renaming files.
+
+24.08.2000
+	- xwf-src/xwf_icon.c: honor write permissions for directories
+	  and for plain files by using other icons.
+	- lib-src/entry.c: check for write permissions for directories
+	  and files.
+	- icons/: added two icons for directories with write permissions
+
+22.08.2000
+	- xcp: copy access and modification time in preserve copy mode
+
+21.08.2000
+	- xat: added appledouble support
+	- xcp-src/: moved adouble.c|h to lib-src/
+	- xcp: small fix in adouble.c
+
+19.08.2000
+	- released 0.9.3
+	- xwf: removed gtk_prop.c|h and added call to "xat" instead
+	- xfi: added "xat" call for new entry in the context menu
+	- xat: first version, should work .. no appledouble support
+	  until now :(, symbolic links are also ignored
+
+17.08.2000
+	- xap: removed xterm from the default applications
+	- xap: added xfi and xat to the default applications
+
+15.08.2000
+	- lib-src/gtk_exec.o: changes to work with the desktop entry
+	  files from xap.
+	- changes in Makefile.in to link the new parts in
+	- moved mailcap.h|c to lib-src/ cause i need it for "xat"
+
+14.08.2000
+	- xat-src/*.*: added new module for changing attributes
+	  not finished!
+
+12.08.2000
+	- xwf-src/gtk_prop.c: changed label to "Change Time"
+	- lib-src/entry.h|c: store access time as well
+	- xfi-src/main.c: use putenv() if setenv() is not available, thx
+	  to joel@it.uu.se who reported this problem on a sunos
+	- *.c/*.h: modifications to work with the new configure
+
+11.08.2000
+	- configure.in: generate lib-src/config.h
+
+10.08.2000
+	- xwf-src/mailcap.c: fixed a bug which loaded the user mailcap
+	  file twice but not the global one. thx to joel@it.uu.se who
+	  found this bug.
+
+09.08.2000
+	- lib-src/io.c: sig_child() use waitpid(.. WNOHANG) instead
+	  of wait()
+
+08.08.2000
+	- xap: changes to use the new modules, this includes support
+	  for desktop entry files instead of links for the panel entries
+	- lib-src/: added lnk_opt.h and lnk_opt.c
+	- lib-src/: added xap_fs.h and xap_fs.c
+
+06.08.2000
+	- lib-src/: added lnk.h and lnk.c
+
+02.08.2000
+	- xwf: DND_ACTION_ASK/uri-list: don't ask twice
+	- lib-src/io.c: io_system() changed first arg of execve() from
+	  "sh" to "/bin/sh"
+	- lib-src/io.c: io_system() changed pid type to pid_t
+
+01.08.2000
+	- clear pathes with ".." inside for the history list
+
+30.07.2000
+	- added more mini icons
+
+26.07.2000
+	- xwf: DND a file over an executable will run the application
+	  with the file as it's argument
+
+24.07.2000
+	- released 0.9.2
+	- xpg: added feature to sign text
+
+21.07.2000
+	- xwf: save history on exit and load it on startup
+	- Makefile.in: clean *.o in xfi-src/
+	- xcp: code clean up and bug fix for moving appledouble files
+
+20.07.2000
+	- xcp: removed the code for sendfile()
+	- xfi: added DND support for the result list
+	- Makefile.in: install a global xap.rc file
+
+19.07.2000
+	- xfi, xwf, xpg, xap: support for a global rc file
+		$prefix/share/xap/xap.rc
+	- xfi: rc-file support added
+
+18.07.2000
+	- xfi: added new entry to the context menu
+
+17.07.2000
+	- released 0.9.1
+	- xfi: switched to unbuffered output of the find command
+	- xfi: support for option "Don't check other filesystems"
+	- xfi: support for option "Follow symbolic links"
+	- xfi: support for option "No user defined"
+	- xfi: support for option "No group defined"
+
+06.07.2000
+	- xcp: set execute bits for copied files if needed
+	- xcp: fixed a small bug which copied / unlinked the file during
+	  move operation on the same device
+
+05.07.2000
+	- released 0.9.0
+	- added icon for xfi
+	- xfi: allow to cancel the search by pressing Escape key.
+	- moved reg.c|h to lib-src/
+
+04.07.2000
+	- xcp: added some lines to make the move-mode working, needed by xfi
+	- xwf: changed cb_find() to use the new tool "xfi"
+	- xfi: added a new tool "X window Find Interface", this was done
+	  with "glade" to play around with it.. really nice tool.
+
+03.07.2000
+	- released 0.8.9
+	- xcp: new button "All" in the override question dialog
+	- xcp: added support for .AppleDouble files (incomplete)
+	- xwf: added Ctrl+Q as an alternate to quit the application
+	- xwf: fixed a cosmetic bug in update_tree()
+	- xwf: removed one unused context menu
+
+01.07.2000
+	- xwf: fixed a bug in xwf_gui.c:add_node() which resulted in a
+	  corrupted date column
+
+01.07.2000
+	- released 0.8.8
+	- xcp: added "-p" flag (preserve owner, group and permissions)
+	- xcp: added nice(12) to ensure that i can continue more
+	  nicely with my work during huge copy operations.
+	- xcp: increased buffer size to 128k
+	- xwf: added "Delete" key to delete marked files
+
+29.06.2000
+	- xwf: allow duplicate of multiple files and directories
+	- xcp: fixed a bug which prevents "xcp file1 file2"
+
+28.06.2000
+	- xwf: fixed a bug in reg.c:reg_add_suffix() which produced dupes
+	  in the registry.
+	- xwf: Alt+o now opens all marked files and if the marked item
+	  is a directory a new window is opened.
+
+25.06.2000
+	- released 0.8.7
+	- xwf: now Ctrl+DoubleClick works as Alt+DoubleClick to have
+	  the same functionality under enlightenment cause E catches Alt+DoubleClick
+	- xwf: added F1 for online help (rxvt + man page)
+	- lib-src/gtk_dlg.c: unref the pixmap at the correct place
+	- xwf-src/xwf_gui.c: add_subtree() minor enhancements
+
+24.06.2000
+	- released 0.8.6
+	- minor fix in Makefile.in
+	- xap: added 2 new mini icons
+	- oops, changed the behaviour in a way i didn't want to.
+	  xwf-src/xwf_gui.c: on_double_click() changed back to
+	  react only on alt+double click to change to the click
+	  directory..
+
+24.06.2000
+	- released 0.8.5
+	- xwf-src/xwf_gui.c: changed Alt+RETURN to RETURN an cleaned up
+	  on_double_click()
+	- xwf-src/xwf_gui.c: use BACKSPACE as a short cut to go one directory
+	  level up.
+	- docs/xwf.1: minor updates
+	- xwf-src/xwf_gui.c: change short cut for new alias from alt+l to alt+m
+
+17.04.2000
+	- xwf-src/xwf_dnd.c: on_drag_src_data_get() fixed a bug
+	  which prevend DND to the attachment window of netscape
+
+13.04.2000
+	- xwf-src/xwf_gui.c: gui_init() added gtk_set_locale()
+
+12.04.2000
+	- released 0.8.4
+	- xcp: minor changes to let moving behave correctly
+	- minor updates in the manpages
+	- xpg: fixed problem with japanese chars (thx to tanimoto)
+
+21.03.2000
+	- xwf_gui.c: fixed a bug in cb_select()
+	- xwf: added GDK_ACTION_ASK support
+	- xcp: added support for linking of files
+
+20.03.2000
+	- uri.c: uri_remove_file_prefix(): remove host part as.
+
+16.03.2000
+	- xcp: more enhancements.. seems to work quite good.
+	- "xpg" will no be installed in the plugin directory as
+	  the "xcp" which is still now finished. please remove
+	  the old one in $(prefix)/bin!
+
+15.03.2000
+	- xwf: don't allow DND to the column titles
+
+14.03.2000
+	- xwf: added history functionality for the "go to" function
+
+11.03.2000
+	- xwf: changed drop policy: allow droping only on executables
+		and directories
+20.02.2000
+	- xpg: add save button for the options
+	- xpg: paned widget to change size of list and text widgets
+	- xpg: text widget for standard error
+
+19.02.2000
+	- xwf: sort file list correctly for special files
+
+16.02.2000
+	- changed some icons
+
+14.02.2000
+	- xap: add more sample entries on a fresh startup
+	- moved sample xpg.rc to docs/
+
+14.02.2000
+	- xpg: added quotes to the filenames before calling system()
+	- xpg: added two new options
+
+13.02.2000
+	- released 0.8.3
+	- lib: fixed the problem with the warnings while opening a dialog box
+	- xpg: added some line to support an options file and encr-/decr. files
+	- xwf: delete files on ALT+Backspace but don't ask for confirmation
+	- xap,xwf: move cursor switching code to a seperate file: lib-src/gtk_util.c
+	- xpg: added cursor switching lines
+
+12.02.2000
+	- xpg: added the functionality to the "save" button
+
+10.02.2000
+	- rleased 0.8.2
+	- minor code clean ups
+	- added some lines to xwf to launch xpg from the context menue
+
+08.02.2000
+	- xpg: started to code a graphical user frontend for gnupg
+	- xap: removed some useless lines
+
+02.02.2000
+	- xwf: improved on_key_press()
+
+22.01.2000
+	- released 0.8.1
+	- xwf: minor enhancements in on_key_press()
+	- xwf: make ctree widget as default focus widget on startup
+
+14.12.1999
+	- added gnome link files and some lines in Makefile.in
+	  install them
+	- added kde link files and some lines in Makefile.in to
+	  install them
+
+04.12.1999
+	- xwf: skip "+" in the property dialog / owner list
+	- xwf: properties dialog: right and left alignment of the labels
+
+25.11.1999
+	- xwf: skip "+" in the property dialog / group list
+	- xwf: look inside the mailcap list if the user wants to register
+	       a suffix and use it as default value if available
+
+14.11.1999
+	- released 0.8.0
+	- xwf: added mailcap/mime.types support (read only)
+
+15.09.1999
+	- xwf: new function to create a symbolic link
+	- xwf: on drag and drop don't add a \n at the end if only
+	  one file is marked and and the format is STRING. so we can DND
+	  files to the attachement window of the netscape mail client.
+
+01.09.1999
+	- small fix in Makefile.in to install the xap man page
+
+30.08.1999
+	- more changes for i18n support, still not ready
+
+29.08.1999
+	- released 0.7.9
+	- added a docs/xap.spec file for those who want to create a rpm package
+	- new subdirectory struture to make decklin happy :) he want's
+	  to have it debian compatible..
+	- added some lines to get it working with gtk+ 1.2.4 .. still probs
+	- xap: now the toplevel is not shown until all widgets are created
+
+21.07.1999
+	- released 0.7.8
+	- xwf_gui.c: don't use \n at the end of the window title
+
+19.06.1999
+	- xwf: changed title of last changed column
+
+18.06.1999
+	- xwf_icon.c: added icons for files we are the owner
+	- xwf: moved icons stuff to seperate files (xwf_icon.{c,h})
+	- xwf: added icons for setguid and setuid executables
+
+16.06.1999
+	- released 0.7.7
+	- xap: added new option "-l {v,h}" to define layout of icons box
+	- xap: added new option "-n #" to define position of labels
+	- xap_gui.c: changed some strdup()s to g_strdup()
+	- xap_gui.c: use only one global tooltip
+	- xap_gui.c: new_icon() added gdk_pixmap_unref()s
+
+15.06.1999
+	- setup.inf: added configure options which i prefer :)
+
+13.06.1999
+	- xwf_gui.c: reduced update timer from 4 to 3 seconds
+	- xwf_gui.c: update_timer(): skip it if there are pending events
+	- xap_gui.c: changed malloc() to g_malloc()
+
+11.06.1999
+	- released version 0.7.6
+	- io.c: io_system_var() reduced sleep time to 0.25 sec.
+
+25.05.1999
+	- xap_gui.c: added wait cursor for one second if program is started
+	- io.c: added sig_child() to prevent zombies for io_system_var() calls
+
+24.05.1999
+	- released version 0.7.5
+	- Warning: if you have previously installed this package you have
+	  to rename xtree.reg to xwf.reg and xtree.rc to xwf.rc!
+	- renamed 'xtree' to xwf cause of a name conflict with the
+	  well known dos program 'xtree'
+
+11.05.1999
+	- released version 0.7.4
+	- xap_gui.c: button_drag_data_get() fixed a small bug
+
+10.05.1999
+	- xtree_gui.h: change struct name to wgeo_t
+	- added sample xtree rc file for fixed font setting in the file list
+
+04.05.1999
+	- updated setup.tcl to version 0.3
+
+04.05.1999
+	- released version 0.7.3
+	- xtree_gui.c: first change to the shown directory before opening a file
+	  on double click
+
+03.05.1999
+	- changed struct name wgeo to wgeo_t
+	- updated setup.tcl to version 0.2
+	- removed NAME_MAX from xap.c
+
+30.04.1999
+	- added some new icons for gnome programs
+
+28.04.1999
+	- xap.1: minor man-page changes
+	- xap.c: fixed usage() info
+	- fix: changed configure.in to use /usr/bin/X11/xterm as default
+	  terminal prog, TERMINAL must be defined with path since version 0.7.1
+	- added DND copy inside xap between the notepad pages
+
+28.04.1999
+	- released 0.7.2
+	- xap_gui.c: changed button_clicked() to use io_system_var()
+	- fixed bug in io.c:io_system_var()
+
+27.04.1999
+	- enlarged entry size in dialg windows
+
+25.04.1999
+	- xtree_gui.c: Alt+G: popup dialg window if a normal file was marked and
+	  the file is not a directory
+
+23.04.1999
+	- xap_gui.c: changed button_drop_data() to use an argv[] for system call
+	- added perl script 'mkFvwmXapMenu' for updating fvwm menu entries
+	- changed registry file format!
+	- added "Execute .." menu entry to xap and xtree
+
+22.04.1999
+	- released 0.7.1
+	- fixed a bug in xap_gui.c to get DND for notepads working again
+
+21.04.1999
+	- released 0.7.0
+	- use \r\n for uri list, so DND to the gimp document index should
+	  work now..
+
+11.04.1999
+	- xap_gui.c: changed button_clicked() not to use NAME_MAX
+
+10.04.1999
+	- only include getopt.h on a linux box
+
+01.04.1999
+	- renamed macro names in xap_gui.h
+
+06.03.1999
+	- added i18n.h
+
+14.02.1999
+	- minor code clean ups
+
+08.02.1999
+	- released 0.6.9
+
+05.02.1999
+	- ask user while renaming before overriding
+
+02.02.1999
+	- minor mini-icon updates
+	- xap: changed opt argument "-t{0|1}" to "-t"
+	- minor updates in the man-pages
+
+31.01.1999
+	- xap: clicking on an app-button while pressing the mod1 key will
+	  start the application in a terminal window (same for DND)
+
+30.01.1999
+	- released 0.6.8
+	- fixed a new introduced bug which prevents showing of new pages
+	- install mini-icons to $prefix/share/icons but don't override existings
+	- xap_gui.c: use system wide icon if no one in users path is found
+	- xap_gui.c: small fix to show icons in new buttons after DND op.
+
+29.01.1999
+	- minor changes to work with gtk+ 1.1.14
+
+28.01.1999
+	- released 0.6.7
+	- xap_gui.c: enable tooltips during DND op.
+
+27.01.1999
+	- xtree_gui.c: new_top() fixed bug on Alt+W (close window)
+	- replaced one jpeg by a gif file to reduce archive size
+
+27.01.1999
+	- released 0.6.6
+	- xtree, xap: support for "-g <x-geometry>", but not perfect until now :)
+	- xtree: changed default size to 380x480
+
+27.01.1999
+	- released 0.6.5
+	- reg.c: fixed a bug in reg_app_by_file() which will resulted
+	  in endless loops
+
+24.01.1999
+	- xap_gui.c: use text/uri-list as first target for drop widgets
+	- xtree_gui.c: fixed a bug which disabled the open a file on RETURN
+	- uri.c: skip comments in uri-list
+	- xtree: accept uri-list with local files on DND operation
+	- xtree: uri-list now uses the file:-prefix
+	- xtree: changed order of DND targets
+
+24.01.1999
+	- released 0.6.4
+	- xtree_gui.c: now icons on the last page will also be shown.
+
+22.01.1999
+	- dialog titles changed
+
+22.01.1999
+	- released 0.6.3
+	- xap: support for renaming of pages
+	- added some quotes to command strings before calling system() to
+	  enable executeables with spaces
+	- xap.c: create $HOME/.xap/.icons if needed
+	- xap_gui.c: new option to define a new icon for the selected button
+	- gtk_dlg.c: allow DND to an entry-dialog
+
+22.01.1999
+	- released 0.6.2
+	- xap: support for mini-icons, there is no way to configure .. xap
+	  just looks for a filename $HOME/.xap/.icons/mini-<app-name>.xpm
+	- xap: changed keyboard short cut for close to Alt+q
+
+21.01.1999
+	- released 0.6.1
+	- xtree_gui.c: fix in cb_props()
+	- started to write a man-page for xtree, cause some functions are
+	  not visible in the context menus
+	- removed root-win-drop from target-table
+	- xtree_dnd.c: fixed the problem with the visual feedback on DND
+	- gtk_cpy.c: small fix
+
+21.01.1999
+	- released 0.6.0
+	- xtree_gui.c: enable cancel in cb_delete()
+	- gtk_cpy.c: chmod() for targets and other stuff..
+	- xtree: ask the user about a directory where to go to if no directory
+	  was marked at go_to() (Alt+G)
+
+20.01.1999
+	- gtk_cpy.c: skip device files, etc..
+	- xtree_gui.c: fix in on_collapse()
+	- xtree_gui.c: fix in get_visible_or_parent()
+	- xtree_gui.c: fix in node_has_child()
+	- xtree_gui.c: cb_new_window() now opens more than one window if
+	  multiple directories are selected
+	- xtree_gui.c: added cb_duplicate() (only for a selected file)
+	- changed picture in setup.tcl, added setup.inf
+	- gtk_dlg.c: minor dialog changes
+	- xtree_gui.c: changed menus
+
+20.01.1999
+	- released 0.5.9
+	- xtree: changed update_timer()
+
+18.01.1999
+	- xtree: added icon for directories with no access
+	- xtree: properties now show also the type (file command)
+	- xtree: don't select ".." at Alt+a
+	- xtree: remove the update timer if toplevel will be destroyed
+	- xtree: changed signal_connect for double_click to work with gtk+ 1.1.13
+	- fixed a bug to move also directories with only one char length to
+	  the trash
+	- xtree: changed menustructure
+	- xtree: fixed a bug which allows overriding of same files, now
+	  the inode number will be checked
+	- xtree: fixed a bug in the update view functions and reduced time
+	  intervall to 2 seconds
+
+17.01.1999
+	- released 0.5.8
+	- added a timer which should update the view
+	- if Alt key was pressed while double click on a executable it
+	  will be started in a terminal (e.g. rxvt)
+
+17.01.1999
+	- released 0.5.7
+	- register dialog now offers a list of previous registered programs
+	- xtree_gui.c: if you want to register a program for a file without
+	  a suffix you can now define the complete filename
+	- configure.in: now url fetch program can be defined, eg. "lynx -source"
+	- entry.c: added '1900' to the year field :)
+
+17.01.1999
+	- released 0.5.6
+	- added some DND copy/move code (only inside the same widget)
+
+15.01.1999
+	- DND a url from netscape ("curl" or simular must be installed)
+	- verify "path" on startup
+	- moved some stuff to xtree_dnd.c
+	- gtk_dlg.c: position dialog at mouse position
+	- xtree_gui.c: create pixmaps only once
+	- xtree: changed verify_selection() and renamed
+
+14.01.1999
+	- released 0.5.5
+	- changed dialog box a little bit..
+
+13.01.1999
+	- added dialog if last window will be deleted
+	- fixed a bug in xtree.c - now the trash will be created
+	- fixed a bug in xap to use the correct startup dir on first startup
+	- changed behavior of double click on ".."
+	- updated the Mlvwmrc-Xtree file
+	- xtree: new short cut: Alt+h (go to home directory)
+	- xap: use rc default file
+	- xtree: multi toplevel support
+	- xap_gui.c: changed the code for parsing the DND data (-> uri.h, uri.c)
+	- source files a little bit reorganised
+
+13.01.1999
+	- released 0.5.4
+	- xap: added accelerators
+	- xtree_gui.c: do not return but skip if file ".." is marked for deleting
+	- xap: fixed bug in xap_gui.c to prefend DND from netscape (file:/..)
+	- xtree: introduced accelerators to make the key_press stuff more simple 
+	- xtree: added some more key short cuts, see Mlvwmrc-Xtree
+	- added sample Mlvwm-Xtreerc file
+
+12.01.1999
+	- root-node directory is now shown in title bar
+	- added mini-icons for xap and xtree
+	- added example rc file for xap
+	- xtree: added about dialog
+	- xtree: cb_open_with() now checks first if there is a good default
+	  value by asking the registry
+
+12.01.1999
+	- released 0.5.3
+	- Return on a selected item which is not a directory works in the same
+	  way as double click on this item
+	- Alt+u is the same as "Go up"
+	- Alt+g is the same as "Go to marked"
+	- Alt+f now opens the find dialog
+	- do not allow renaming or deleting of ".."
+	- some fixes about selections
+	- pressing a char in the ctree now moves the pointer to the
+	  first file which starts with this character
+	- small fix in obj.c, now we can move stale links to trash
+
+11.01.1999
+	- released 0.5.2
+	- fixed a bug introduced in 0.5.1 in xap_gui.c: button_drop_data()
+	- added "Register .." to xtree-file context menu
+	- reg.c, reg.h: build registry based on ~/.xap/xtree.reg
+	  and use the found program on double click
+	- xtree: added new icons for special devices
+	- xtree_gui.c: move_file() ignore special device files
+	- changed Makefile.in to make correct links in README
+	- bugfix in gtk_exec.c (check_button)
+
+11.01.1999
+	- released 0.5.1
+	- xtree: added "find" menu entry which in turn just calls "find"
+	  in a terminal window :)
+	- xtree: new option in open_with() "Start in terminal"
+	- fixed bug in xtree_gui.c: move_file()
+	- minor changes in properties dialog
+	- xtree: added some code to get visual feedback on DND, but DND
+	  destination still doesn't work (!!!)
+	- xtree: open_with now checks first if there is an link in xap-dir,
+	  which corresponds to the named application
+	- changed system() calls to quote filenames in command line
+	- fixed problem in on_drag_data_delete()
+
+10.01.1999
+	- released 0.5
+	- xtree: fixed bug in "on_double_click"
+	- xtree: changed menus a little bit
+	- xtree: "empty trash" now removes also directories
+	- xtree: deleting of directories is working now
+	- xtree: added properties dialog
+	- xtree: now a directory has at least the child ".."
+	- xtree: added "go up" menu option
+	- xtree: changed some pixmaps
+	- xtree: root node has now also an icon
+
+09.01.1999
+	- released 0.4
+	- gtk_dlg.c: pressing RETURN in the entry now calls ok callback
+	- xap: added popup menu for the pages
+	- code clean ups
+	- xtree: call "open with" dialog on double click on a file
+	- xtree: changed default program from "open with" to "gvim" instead
+	  of "vi" which makes no sence in x11 :)
+
+08.01.1999
+	- released 0.3
+	- xtree: added new icon for executables
+	- xtree: added "new file" in menu
+	- xtree_gui.c: fixed my_compare()
+	- xtree: added "new directory" in menu
+
+07.01.1999
+	- xtree: added some trash functions
+	- xtree: introduced trash-dir variable .. not used until now
+	- xtree: changed the location of xtree rc to $HOME/.xap/xtree.rc
+
+06.01.1999
+	- xtree_gui.c: show ".." always so we could go up
+	- xtree_gui.c: wrote my own sort function
+	- xtree_gui.c: if a row was marked and it has visible children, only
+	  it's children one will be sorted
+	  while pressing on the column buttons
+	- xap.c: added quit option in context menu
+	- xtree_gui.c: use lstat() if the entry is a link
+
+06.01.1999
+	- released 0.2
+	- xap_gui.c: added rename option to the button context menu
+	- xap_gui.c: added popup for the button to delete a button from the page
+	- xap_gui.c: change vborder and vborder to 0 to make the app smaller
+
+05.01.1999
+	- xtree_gui.c: added popup menu
+	- xap_gui.c: add_pages() changed to skip hidden files and entries
+	  which are not directories
+	- added parsing of rc-file to xap and xtree
+
+04.01.1999
+	- started 'xtree'
+
+04.01.1999
+	- released 0.1
+

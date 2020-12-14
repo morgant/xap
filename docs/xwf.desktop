@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=X Window Filemanager
+Name[de]=X Window Dateimanager
+Exec=xwf
+Terminal=0
+Type=Application
+Icon=mini-xwf.xpm

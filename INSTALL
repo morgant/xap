@@ -1,0 +1,33 @@
+INSTALL
+-------
+
+Extract the source code archive in a directory where you want, e.g.
+in your HOME directory with the following command:
+
+    tar -xzvf xap-<version>.tar.gz
+
+This will create a subdirectory "xap". Change into this directory.
+
+Start the "setup.tcl" program and execute the following
+steps (this needs tcl/tk 8.0 or newer):
+
+	1. Make Makefile
+	2. Compile
+	3. Install
+
+OR in the classic way:
+
+	1. run the "configure" program
+	2. say "make"
+	3. and then "make install"
+
+If you have done these steps, try to start "xap" or "xwf"
+
+Don't forget to install the mini-icons of xap and xwf if your window-manager
+likes it.. and may be if you are using MLVWM you can use the sample Mlvwmrc-xwf
+file..
+
+NOTE: don't forget, you need glib/gtk+ 1.2.0 or newer!
+---
+rasca, berlin 1999
+

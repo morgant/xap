@@ -1,0 +1,79 @@
+.\" Written by Rasca Gmelch, Berlin 1999 - 2000
+.\" Published under the GNU GPL V2
+.\"
+.TH XAP 1 "Jul. 2000" "GNU" "Version 0.9"
+.SH NAME
+xap - gtk+ based application panel for X11
+.SH SYNOPSIS
+.BI "xap [-v] [-g <x-geometry>] [-t] [-n #] [-l {v,h}]
+.SH OPTIONS
+.TP
+.B -v
+Verbose mode, give some output on startup.
+.TP
+.B -g \ <x-geometry>
+Define geometry of the toplevel window.
+.TP
+.B -t
+Create toplevel window as transient.
+.TP
+.B -n #
+Define
+.I notebook label position,
+default is 2. The meaning is defined as follows
+1 = right side,
+2 = top side,
+3 = bottom side,
+4 = left side.
+.TP
+.B -l {v,h}
+Define orientation of the icon box layout, 'h' means horizontal
+and 'v' means vertical.
+
+.SH QUICK REFERENCE
+.I xap
+is designed to work with the xwf application, but other XDND-aware
+filemanager like
+.I gmc
+may also work. In
+.I xap
+you can create new application
+buttons by Drag-and-Drop-ing applications from 
+.I xwf
+to the label of a
+notebook page. You can not move an application button from one
+page to another but you can copy it with DND and then just remove
+the old one.
+
+If you want to add a new notebook page to hold a new group of applications
+move your mouse to an existing notebook page-label, click the right
+mouse button and activate the menu option "New ..".
+
+To start an application in a terminal window hold the Alt-key pressed
+while clicking the button.
+.SH KEYBOARD SHORT CUTS
+.TP
+Alt+Q:
+quit the application.
+.TP
+Alt+N:
+create a new notebook-page.
+.SH FILES
+.TP
+.B $HOME/.xap/
+.I xap
+home directory
+.TP
+.B $HOME/.xap/xap.rc
+.I xap
+gtk+ startup file
+.SH SEE ALSO
+.B xwf(1), xpg(1), X(1), mc(1)
+.SH AUTHOR
+(c) Rasca, Berlin
+.br
+http://home.pages.de/~rasca/
+.br
+.I xap
+is published under the GNU General Public License
+

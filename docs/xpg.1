@@ -1,0 +1,43 @@
+.\" Written by Rasca Gmelch, Berlin 2000
+.\" Published under the GNU GPL V2
+.\"
+.TH XPG 1 "Jul. 2000" "GNU" "Version 0.9"
+.SH NAME
+xpg - gtk+ based frontend for gnupg
+.SH SYNOPSIS
+.BI "xap [-v] [-g <x-geometry>] <files ..>
+.SH OPTIONS
+.TP
+.B -v
+Verbose mode, give some output on startup.
+.TP
+.B -g \ <x-geometry>
+Define geometry of the toplevel window.
+
+.SH QUICK REFERENCE
+.I xpg
+is a simple GUI shell for encrypting and decrypting files
+or text with
+.BR gnupg .
+It is not designed for key management!
+.br
+In the text page you can encrypt text pasted from the
+clipboard (middle mouse button).
+In the files page you can drag and drop files
+and then mark and encrypt / decrypt them.
+
+.SH FILES
+.TP
+.B $HOME/.xap/xpg.rc
+.I xpg
+gtk+ startup file
+.SH SEE ALSO
+.B xwf(1), xap(1), gpg(1)
+.SH AUTHOR
+(c) Rasca, Berlin
+.br
+http://home.pages.de/~rasca/
+.br
+.I xpg
+is published under the GNU General Public License
+

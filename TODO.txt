@@ -1,0 +1,6 @@
+- xwf: make "go to .." allways be available?
+- xwf: add XDS protocol
+- DND: correct focus drawing while DND from one to an other window
+- all: multi language support
+- xpg: more features
+- all: html, man-page and screenshots updates

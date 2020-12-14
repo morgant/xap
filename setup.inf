@@ -1,0 +1,20 @@
+# sample inf file
+#
+set inf_info	"Xap and Xwf\nSteps for Installation:
+	* Verify that you have installed gtk+ 1.2.0 or newer
+	* Create a Makefile (Make Makefile -> Run configure)
+	* Compile the source code (Compile -> Compile)
+	* Install the programs, man-pages and the icons (Install -> Install)"
+#
+# create information buttons for the following files
+#
+set inf_view	"COPYING README ChangeLog"
+#
+set inf_makefile	"Makefile"
+#
+set inf_create_makefile_cmd "configure"
+set inf_makefile_options	"--prefix=/usr/local/X11 --with-terminal=/usr/local/X11/bin/rxvt --with-mlvwm-dir=/usr/local/X11"
+set inf_compile_cmd "make"
+set inf_install_cmd "make install"
+#
+#

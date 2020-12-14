@@ -1,0 +1,13 @@
+# KDE Config File
+[KDE Desktop Entry]
+BinaryPattern=xwf;
+Comment=A X11/Gtk based filemanager
+Comment[de]=Ein Gtk-Dateimanager für X11
+Exec=xwf
+Icon=mini-xwf.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
+Name=X Window Filemanager
+Name[de]=X Window Dateimanager

@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+# rasca, berlin 1999
+#
+# this script creates menu entries for the fvwm2 window
+# manager by adding all programs defined in the xap panel.
+#
+# add e.g. the following to your .fvwm2rc file:
+#
+# Style "xap" Sticky, NoTitle
+# AddToMenu RootMenu
+# + "Xap Apps" PopUp xap
+#
+# PipeRead "$HOME/bin/mkFvwmXapMenu"
+#
+
+my $dir = "$ENV{'HOME'}/.xap";
+my $ntp;
+my @menus;
+my $num = 0;
+my $i;
+my $app;
+
+while (<$dir/*>) {
+	$ntp = substr ($_,  rindex($_, '/'));
+	$ntp =~ s/\///;
+	if (-d $_) {
+		add_menu ($_, $ntp);
+		$menus[$num++] = $ntp;
+	}
+}
+print "AddToMenu \"xap\"\n";
+for ($i = 0; $i < $num; $i++) {
+	$app = $menus[$i];
+	print "+ \"$app\" PopUp $app\n";
+}
+
+sub add_menu {
+	my $dir = shift;
+	my $name= shift;
+	my $app;
+	print "AddToMenu \"$name\"\n";
+	while (<$dir/*>) {
+		$app = substr ($_,  rindex($_, '/'));
+		$app =~ s/\///;
+		print "+ \"$app\" Exec exec $_ &\n";
+	}
+}
+

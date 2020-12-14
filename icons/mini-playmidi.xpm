@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_playmidi_xpm[] = {
+"16 16 4 1",
+" 	c None",
+".	c gray",
+"X	c black",
+"o	c blue3",
+"                ",
+"     .XX.       ",
+"     X     .XX. ",
+"     XXX   X    ",
+"     X     XXX  ",
+"   . X     X    ",
+"  XXX.     X    ",
+"ooXXXooooooXoooo",
+"  XXX    . X    ",
+"   .    XXX.    ",
+"ooooooooXXXooooo",
+"        XXX     ",
+"         .      ",
+"oooooooooooooooo",
+"                ",
+"                "};

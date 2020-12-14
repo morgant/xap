@@ -1,0 +1,27 @@
+/* XPM */
+static char * mini_xemacs_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c white",
+"o	c black",
+"O	c red",
+/* pixels */
+"                ",
+".........       ",
+".XXXXXXX.o      ",
+".X.....X.Xo    O",
+".XXXXXXX.ooo  OO",
+".X.....XXXXo OOo",
+".XXXXXXXXXXoOOo ",
+".X........XOOo  ",
+".XXXXXXXXXOOo   ",
+".X.......oOo    ",
+".XXXXXXXoooo    ",
+".X.....oooXo    ",
+".XXXXXoXXXXo    ",
+".XXXXXXXXXXo    ",
+"oooooooooooo    ",
+"                "};

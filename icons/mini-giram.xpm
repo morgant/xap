@@ -1,0 +1,31 @@
+/* XPM */
+static char * mini_povray_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 9 1",
+/* colors */
+" 	c none",
+".	c #a20309",
+"X	c #bb0306",
+"o	c #383838",
+"O	c #04983f",
+"+	c #81050b",
+"@	c #0f6632",
+"#	c #30814f",
+"$	c #757570",
+/* pixels */
+"                ",
+"                ",
+"    ..X    oO   ",
+"  +..XXXX  @O   ",
+" o+..XXXX  @OO  ",
+"o+++..XXX.o@OO  ",
+"oo+++....oo@#O  ",
+"o++o+++.+oo@#OO ",
+"ooo+o+++ooo@#OOo",
+"ooo+oo++ooo@#OO$",
+"ooooo+ooooo@#OO#",
+"@ooooooooo@@##OO",
+"ooooooooo@o@#OOO",
+"ooooooooo@o@#OOO",
+"$$$$$$$oo@@@#OOO",
+"$$$$$$$$$$$$#$$$"};

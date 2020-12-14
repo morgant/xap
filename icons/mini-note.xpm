@@ -1,0 +1,28 @@
+/* XPM */
+static char * mini_note_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 6 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c yellow",
+"o	c black",
+"O	c white",
+"+	c red3",
+/* pixels */
+"                ",
+".........       ",
+".XXXXXXX.o      ",
+".X.....X.Oo    +",
+".XXXXXXX.ooo  ++",
+".X.....XXXXo ++o",
+".XXXXXXXXXXo++o ",
+".X........X++o  ",
+".XXXXXXXXX++o   ",
+".X.......o+o    ",
+".XXXXXXXoooo    ",
+".X.....oooXo    ",
+".XXXXXoXXXXo    ",
+".XXXXXXXXXXo    ",
+"oooooooooooo    ",
+"                "};

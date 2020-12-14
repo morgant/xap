@@ -1,0 +1,172 @@
+dnl
+
+AC_INIT()
+dnl AC_PREFIX_DEFAULT(/usr/local/X11)
+AC_CONFIG_HEADER(lib-src/config.h)
+
+PACKAGE=xap
+VERSION=0.9.7
+
+AC_ISC_POSIX
+AC_PROG_MAKE_SET
+dnl additional places where to look for libs
+dnl
+LIBS="$LIBS -L/usr/local/lib -L\$(prefix)/lib"
+CFLAGS="$CFLAGS -I\$(prefix)/include"
+LDFLAGS="$LDFLAGS -L\$(prefix)/lib"
+
+AC_CHECK_PROG(AR, ar, ar, ar)
+AC_PROG_RANLIB
+
+ALL_LINGUAS="de"
+AM_GNU_GETTEXT
+
+AC_MSG_CHECKING(enable debug code)
+AC_ARG_ENABLE(debug,
+	[  --enable-debug          enable debug code],
+	[debug=$enableval],
+	[debug=no]
+)
+AC_MSG_RESULT($debug)
+if test "$debug" != "no"; then
+	if test "$debug" != "yes"; then
+		ac_defs="$ac_defs -g"
+		for i in $debug; do
+			ac_defs="$ac_defs -D$i"
+		done
+	else
+		ac_defs="$ac_defs -g -DDEBUG"
+	fi
+fi
+
+
+AC_PATH_X
+AC_PATH_XTRA
+
+gtk_prefix=`gtk-config --prefix`
+if test x$gtk_prefix != x; then
+	LIBS="$LIBS -L$gtk_prefix/lib"
+	X_CFLAGS="$X_CFLAGS -I$gtk_prefix/include"
+fi
+glib_prefix=`glib-config --prefix`
+if test x$glib_prefix != x; then
+	LIBS="$LIBS -L$glib_prefix/lib"
+	X_CFLAGS="$X_CFLAGS -I$glib_prefix/lib/glib/include"
+fi
+LIBS="$LIBS $X_LIBS"
+AC_CHECK_LIB(gdk, gdk_event_put)
+AC_CHECK_LIB(gtk, gtk_ctree_new)
+AC_CHECK_LIB(intl, textdomain)
+
+AC_CHECK_HEADERS(getopt.h limits.h)
+AC_CHECK_FUNC(getopt, [getopt=yes])
+if test x$getopt = "x"; then
+	CFLAGS="$CFLAGS -I./getopt"
+fi
+
+AC_MSG_CHECKING(for terminal)
+AC_ARG_WITH(terminal,
+	[  --with-terminal=PROG    terminal program, [default=/usr/bin/X11/xterm]],
+	[ac_terminal=$withval],
+	[ac_terminal=/usr/bin/X11/xterm]
+)
+if ! test -x "$ac_terminal"; then
+	echo "*** '$ac_terminal' not found"
+fi
+AC_MSG_RESULT($ac_terminal)
+CFLAGS="$CFLAGS $ac_defs -DTERMINAL=\\\"$ac_terminal\\\""
+
+AC_MSG_CHECKING(for urlfetch)
+AC_ARG_WITH(urlfetch,
+	[  --with-urlfetch=PROG    url fetch program, [default=/usr/local/bin/curl]],
+	[ac_urlfetch="$withval"],
+	[ac_urlfetch="/usr/local/bin/curl"]
+)
+if ! test -x "$ac_urlfetch"; then
+	echo "*** '$ac_urlfetch' not found"
+fi
+AC_MSG_RESULT($ac_urlfetch)
+CFLAGS="$CFLAGS -DURLFETCH=\"\\\"$ac_urlfetch\\\"\""
+
+AC_MSG_CHECKING(for netscape)
+if prg=`which netscape`; then
+	AC_MSG_RESULT($prg)
+	CFLAGS="$CFLAGS -DMOZILLA=\"\\\"$prg\\\"\""
+else
+	AC_MSG_RESULT(not found)
+fi
+
+AC_MSG_CHECKING(for rxvt)
+if prg=`which rxvt`; then
+	AC_MSG_RESULT($prg)
+	CFLAGS="$CFLAGS -DRXVT=\"\\\"$prg\\\"\""
+else
+	AC_MSG_RESULT(not found)
+fi
+
+AC_MSG_CHECKING(for gvim)
+if prg=`which gvim`; then
+	AC_MSG_RESULT($prg)
+	CFLAGS="$CFLAGS -DGVIM=\"\\\"$prg\\\"\""
+else
+	AC_MSG_RESULT(not found)
+fi
+
+AC_MSG_CHECKING(for star office)
+if prg=`which soffice`; then
+	AC_MSG_RESULT($prg)
+	CFLAGS="$CFLAGS -DSOFFICE=\"\\\"$prg\\\"\""
+else
+	AC_MSG_RESULT(not found)
+fi
+
+AC_MSG_CHECKING(for kde directory argument)
+AC_ARG_WITH(kdedir,
+	[  --with-kde-dir=/path    kde install base, [default=/opt/kde]],
+	[ac_kde=$withval],
+	[ac_kde=/opt/kde]
+)
+AC_MSG_RESULT($ac_kde)
+
+AC_MSG_CHECKING(for gnome directory argument)
+AC_ARG_WITH(gnomedir,
+	[  --with-gnome-dir=/path  gnome install base, [default=/opt/gnome]],
+	[ac_gnome=$withval],
+	[ac_gnome=/opt/gnome]
+)
+AC_MSG_RESULT($ac_gnome)
+
+AC_MSG_CHECKING(for mlvwm directory argument)
+AC_ARG_WITH(mlvwmdir,
+	[  --with-mlvwm-dir=/path  mlvwm install base, [default=/usr/local]],
+	[ac_mlvwm=$withval],
+	[ac_mlvwm=/usr/local/X11]
+)
+AC_MSG_RESULT($ac_mlvwm)
+
+AC_MSG_CHECKING(for appledouble support)
+AC_ARG_ENABLE(appledouble,
+	[  --enable-appledouble    .AppleDouble-support, [default=yes]],
+	[adouble=$enableval],
+	[adouble=yes]
+)
+AC_MSG_RESULT($adouble)
+if test "$adouble" != "no"; then
+	CFLAGS="$CFLAGS -DADOUBLE"
+fi
+
+AC_SUBST(x_libraries)
+AC_SUBST(x_includes)
+AC_SUBST(ac_kde)
+AC_SUBST(ac_gnome)
+AC_SUBST(ac_mlvwm)
+AC_SUBST(PACKAGE)
+AC_SUBST(VERSION)
+
+AC_OUTPUT(
+Makefile
+docs/Makefile
+po/Makefile.in
+po/Makefile
+)
+

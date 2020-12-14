@@ -1,0 +1,26 @@
+# sample xwf rc file
+#
+
+style "xwf"
+{
+	font = "*-helvetica-*-r-*-*-12-*-*-*-*-*-*-*"
+}
+
+style "files"
+{
+	# your can use 'font = "fixed"' if you don't have the following
+	# font on your system
+	#
+	font = "-*-neep-medium-r-semicondensed-*-13-*-75-75-c-*-iso8859-1"
+	base[NORMAL] = "#dfdfdf"
+}
+
+style "column_header"
+{
+    bg[NORMAL] = "#cfcbcf"
+}
+
+widget "*" style "xwf"
+widget "*GtkCTree*" style "files"
+widget "*GtkCTree*GtkButton*" style "column_header"
+

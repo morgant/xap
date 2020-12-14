@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_cheap_call_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c red",
+"X	c red4",
+"o	c black",
+"                ",
+"                ",
+"       ....     ",
+"     X.......   ",
+"   X........... ",
+"  ....X    X....",
+"  ...X     X...X",
+" o XX .... XXXXX",
+"o    ..ooo. XXX ",
+"o   ..o...o.    ",
+"o  X..o...o..X  ",
+" o X..o...o...X ",
+" o X...ooo....X ",
+"  oX..........X ",
+"    X.........X ",
+"     XXXXXXXXX  "};

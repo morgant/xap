@@ -1,0 +1,14 @@
+style "default"
+{
+	font = "*-helvetica-*-r-*-*-12-*-*-*-*-*-*-*"
+}
+
+style "list"
+{
+	font = "fixed"
+	fg[NORMAL] = {0.0, 0.0, 0.0}
+	base[NORMAL] = "#f6f6f6"
+}
+
+widget "*" style "default"
+widget "*GtkList*" style "list"
